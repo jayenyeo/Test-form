@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>탐구과목 성향 테스트</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="wrap">
+    <h1>탐구과목 성향 테스트</h1>
+    <p class="small">
+      24문항(1문항씩 진행). 결과는 “성격”이 아니라
+      <b>학습 요구 구조와의 적합도</b>입니다.
+    </p>
+
+<!-- Intro -->
+<section id="screen-intro" class="card intro-card">
+
+  <!-- HERO IMAGE -->
+  <div class="hero-box">
+    <img src="./hero.png" alt="탐구과목 성향 테스트 히어로 이미지">
+  </div>
+
+  <h2 class="hero-title">내게 꼭 맞는 수능 탐구 과목은?</h2>
+
+  <div class="row">
+    <div>
+      <span class="pill">24문항</span>
+      <span class="pill">코사인 유사도</span>
+      <span class="pill">TOP3 추천</span>
+    </div>
+    <button class="btn" id="btn-start" type="button">시작하기</button>
+  </div>
+
+  <div class="hr"></div>
+  <div class="small">
+    ※ 각 문항은 1~4 중 하나를 선택하면 자동 저장됩니다.
+  </div>
+</section>
+
+
+    <!-- Test -->
+    <section id="screen-test" class="hide">
+      <div class="card">
+        <div class="row">
+          <div>
+            <div class="small" id="stepText">1 / 24</div>
+            <div class="progress-wrap">
+              <div class="progress">
+                <div id="progressBar"></div>
+              </div>
+            </div>
+          </div>
+          <button class="btn secondary" id="btn-reset" type="button">
+            초기화
+          </button>
+        </div>
+
+        <!-- 질문이 JS로 들어오는 자리 -->
+        <div id="questionHost" class="question-card"></div>
+
+        <div class="nav">
+          <button class="btn secondary" id="btn-prev" type="button">
+            이전
+          </button>
+          <button class="btn" id="btn-next" type="button">
+            다음
+          </button>
+        </div>
+
+        <div class="hr"></div>
+        <div class="row">
+          <div class="small" id="answeredText">
+            0 / 24 문항 응답
+          </div>
+          <button class="btn" id="btn-submit" type="button" disabled>
+            결과 보기
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Result -->
+    <section id="screen-result" class="hide">
+      <div class="grid2">
+        <div class="card">
+          <div class="row">
+            <div>
+              <div class="title">추천 과목 TOP 3</div>
+              <div class="small">
+                적합도는 코사인 유사도(0~1)이며,
+                높을수록 “요구 패턴이 닮음”을 의미합니다.
+              </div>
+            </div>
+            <button class="btn secondary" id="btn-again" type="button">
+              다시 하기
+            </button>
+          </div>
+
+          <div class="hr"></div>
+          <div id="top3" class="rank"></div>
+        </div>
+
+        <div class="card">
+          <div class="title">나의 학습 프로필(6차원)</div>
+          <div class="hr"></div>
+          <div id="dims" class="dimlist"></div>
+          <div class="hr"></div>
+          <div class="title">해석 가이드</div>
+          <p class="small" id="guide"></p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ✅ footer는 반드시 body 안 -->
+  <footer class="brand-footer">
+    <span>© 2025 CODE;X</span>
+    <span class="small">All rights reserved.</span>
+  </footer>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
+
+
+
+
